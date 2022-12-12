@@ -1,18 +1,30 @@
 <template>
   <section class="app">
-    <form-component />
-    <cards />
+    <form-component @create="createCard" />
+    <cards :cards="cards" @remove="removeCard" />
   </section>
 </template>
 
 <script>
   import FormComponent from './FormComponent.vue';
   import Cards from './Cards.vue';
-
+  import cardsList from "../static/cards.json";
 
   export default {
     components: { FormComponent },
-
+    data() {
+      return {
+        cards: cardsList,
+      }
+    },
+    methods: {
+      createCard(card) {
+        this.cards.unshift(card)
+      },
+      removeCard(card) {
+        this.cards = this.cards.filter(c => c.id !== card.id)
+      }
+    }
   }
 </script>
 

@@ -8,14 +8,14 @@
           <label class="form__input-label" for="name">Наименование товара</label>
           <div class="form__input-required" />
         </div>
-        <input class="form__input" :class="{'form__input_error': nameError}" v-model="name" id="name"
+        <input class="form__input" :class="{'form__input_error': nameError}" v-model="card.name" id="name"
           placeholder="Введите наименование товара" @input="validateName" type="text" maxlength="40" />
         <span class="form__input-error">{{nameError}}</span>
       </div>
 
       <div class="form__input-container">
         <label class="form__input-label" for="description">Описание товара</label>
-        <textarea class="form__input form__input_textarea" v-model="description" id="description"
+        <textarea class="form__input form__input_textarea" v-model="card.description" id="description"
           placeholder="Введите описание товара" maxlength="240" />
       </div>
 
@@ -24,7 +24,7 @@
           <label class="form__input-label" for="imageUrl">Ссылка на изображение товара</label>
           <div class="form__input-required" />
         </div>
-        <input class="form__input" :class="{'form__input_error': imageUrlError}" v-model="imageUrl" id="imageUrl"
+        <input class="form__input" :class="{'form__input_error': imageUrlError}" v-model="card.imageUrl" id="imageUrl"
           placeholder="Введите ссылку" type="url" @input="validateUrl" />
         <span class="form__input-error">{{imageUrlError}}</span>
       </div>
@@ -34,14 +34,13 @@
           <label class="form__input-label" for="price">Цена товара</label>
           <div class="form__input-required" />
         </div>
-        <input class="form__input" :class="{'form__input_error': priceError}" v-model="price" id="price"
+        <input class="form__input" :class="{'form__input_error': priceError}" v-model="card.price" id="price"
           placeholder="Введите цену" type="number" min="1" @input="validatePrice" />
         <span class="form__input-error">{{priceError}}</span>
       </div>
 
-      <button type="submit" class="form__submit-btn"
-        :class="{'form__submit-btn_active':(name !== '') & (imageUrl !== '') & (imageUrlError === '') & (price > 0)}"
-        @click="handleSubmit" disabled="true">Добавить
+      <button type="submit" class="form__submit-btn" :class="{'form__submit-btn_active':isBtnActive}"
+        @click="handleSubmit" :disabled="!isBtnActive">Добавить
         товар</button>
     </form>
   </section>
@@ -51,13 +50,15 @@
   export default {
     data() {
       return {
-        name: "",
+        card: {
+          name: "",
+          description: "",
+          imageUrl: "",
+          price: null,
+        },
         nameError: "",
-        description: "",
-        imageUrl: "",
         imageUrlError: "",
-        price: null,
-        priceError: ""
+        priceError: "",
       }
     },
     methods: {
@@ -84,10 +85,19 @@
         }
       },
       handleSubmit(evt) {
-        this.name = "";
-        this.description = "";
-        this.imageUrl = "";
-        this.price = "";
+        this.card.id = Date.now();
+        this.$emit('create', this.card);
+        this.card = {
+          name: "",
+          description: "",
+          imageUrl: "",
+          price: ""
+        }
+      }
+    },
+    computed: {
+      isBtnActive() {
+        return ((this.card.name !== '') & (this.card.imageUrl !== '') & (this.imageUrlError === '') & (this.card.price > 0)) ? true : false;
       }
     }
   }
