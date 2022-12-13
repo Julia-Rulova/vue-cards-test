@@ -1,17 +1,17 @@
 <template>
   <section class="app">
     <form-component @create="createCard" />
-    <cards :cards="cards" @remove="removeCard" />
+    <cards-component :cards="cards" @remove="removeCard" />
   </section>
 </template>
 
 <script>
   import FormComponent from './FormComponent.vue';
-  import Cards from './Cards.vue';
-  import cardsList from "../static/cards.json";
+  import CardsComponent from './CardsComponent.vue';
+  import cardsList from "../assets/cards.json";
 
   export default {
-    components: { FormComponent },
+    components: { FormComponent, CardsComponent },
     data() {
       return {
         cards: cardsList,

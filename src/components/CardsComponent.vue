@@ -12,19 +12,20 @@
 
 
     <TransitionGroup name="cards-list" tag="ul" class="cards">
-      <card v-for="card in cards" :card="card" :key="card.id" @remove="$emit('remove', card)" />
+      <card-component v-for="card in cards" :card="card" :key="card.id" @remove="$emit('remove', card)" />
     </TransitionGroup>
 
   </section>
 </template>
 
 <script>
-  import Card from "../components/Card.vue";
+  import CardComponent from "./CardComponent.vue";
 
   export default {
     props: {
       cards: Array
     },
+    components: { CardComponent }
   }
 </script>
 

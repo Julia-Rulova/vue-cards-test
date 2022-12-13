@@ -12,7 +12,7 @@
     export default {
         props: {
             card: Object
-        }
+        },
     }
 </script>
 
@@ -44,7 +44,7 @@
         position: absolute;
         top: -8px;
         right: -8px;
-        background-image: url("../static/images/delete.svg");
+        background-image: url("../assets/images/delete.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 16px;
