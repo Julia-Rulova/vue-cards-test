@@ -1,7 +1,7 @@
 <template>
   <section class="cards__section">
     <div class="cards__custom-select">
-      <div class="cards__select-arrow">🢓</div>
+      <div class="cards__select-arrow" />
       <select class="cards__select" v-model="selectValue" @input="changeSelectValue">
         <option>По умолчанию</option>
         <option>Сначала недорогие</option>
@@ -70,8 +70,10 @@
   }
 
   .cards__select-arrow {
-    width: 8px;
-    height: 9px;
+    background-image: url("../assets/images/arrow.svg");
+    width: 15px;
+    height: 12px;
+    opacity: 0.5;
   }
 
   .cards__select {
@@ -95,10 +97,6 @@
 
   .cards__select:focus-visible {
     outline: none;
-  }
-
-  .cards__select::after {
-    content: "🢓";
   }
 
   .cards {
