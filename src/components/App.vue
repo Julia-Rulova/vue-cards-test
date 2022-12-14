@@ -21,7 +21,7 @@
     data() {
       return {
         cards: cardsList,
-        width: 0,
+        width: innerWidth,
         isPopupOpen: false
       }
     },
