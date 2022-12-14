@@ -244,4 +244,31 @@
     opacity: 0.7;
     transition: all 0.5s ease-in-out;
   }
+
+  @media screen and (max-width: 1095px) {
+    .form__section {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      width: 100%;
+      align-items: center;
+      padding-top: 15px;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    .form__submit-btn {
+      width: 100%;
+      height: 30px;
+      border-radius: 4px;
+    }
+  }
+
+  @media screen and (max-width: 355px) {
+    .form__title {
+      font-size: 20px;
+      line-height: 25px;
+      margin: 0 0 10px;
+    }
+  }
 </style>

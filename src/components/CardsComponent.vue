@@ -122,4 +122,40 @@
   .cards-list-leave-active {
     position: absolute;
   }
+
+  @media screen and (max-width: 1410px) {
+    .cards {
+      grid-template-columns: repeat(2, 332px);
+    }
+  }
+
+  @media screen and (max-width: 1095px) {
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .cards {
+      grid-template-columns: repeat(1, 300px);
+    }
+
+    .cards__section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media screen and (max-width: 355px) {
+    .cards {
+      grid-template-columns: repeat(1, 270px);
+    }
+  }
 </style>

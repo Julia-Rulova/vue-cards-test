@@ -104,4 +104,10 @@
         left: 16px;
         bottom: 24px;
     }
+
+    @media screen and (max-width: 1095px) {
+        .card {
+            width: 100%;
+        }
+    }
 </style>
