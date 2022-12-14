@@ -85,7 +85,6 @@
         }
       },
       handleSubmit(evt) {
-        this.card.id = Date.now();
         this.$emit('create', this.card);
         this.card = {
           name: "",

@@ -19,10 +19,19 @@
     },
     methods: {
       createCard(card) {
-        this.cards.unshift(card)
+        card.id = this.cards.length;
+        this.cards.unshift(card);
+        localStorage.setItem("cards", JSON.stringify(this.cards));
       },
       removeCard(card) {
-        this.cards = this.cards.filter(c => c.id !== card.id)
+        this.cards = this.cards.filter(c => c.id !== card.id);
+        localStorage.setItem("cards", JSON.stringify(this.cards));
+      }
+    },
+    beforeMount() {
+      const cardsArr = localStorage.getItem("cards")
+      if (cardsArr) {
+        this.cards = JSON.parse(cardsArr)
       }
     }
   }

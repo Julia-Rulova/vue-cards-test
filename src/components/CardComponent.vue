@@ -63,7 +63,7 @@
 
     .card__img {
         width: 100%;
-        max-height: 200px;
+        height: 200px;
         object-fit: cover;
         border-radius: 10px 10px 0 0;
     }

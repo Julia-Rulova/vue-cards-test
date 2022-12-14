@@ -2,11 +2,11 @@
   <section class="cards__section">
     <div class="cards__custom-select">
       <div class="cards__select-arrow">🢓</div>
-      <select class="cards__select">
+      <select class="cards__select" v-model="selectValue" @input="changeSelectValue">
         <option>По умолчанию</option>
-        <option>По цене min</option>
-        <option>По цене max</option>
-        <option>По наименованию</option>
+        <option>Сначала недорогие</option>
+        <option>Сначала дорогие</option>
+        <option>По алфавиту</option>
       </select>
     </div>
 
@@ -25,7 +25,25 @@
     props: {
       cards: Array
     },
-    components: { CardComponent }
+    data() {
+      return {
+        selectValue: 'По умолчанию'
+      }
+    },
+    components: { CardComponent },
+    methods: {
+      changeSelectValue(evt) {
+        if (evt.target.value === 'Сначала дорогие') {
+          const sorted = this.cards.sort((c1, c2) => c1.price < c2.price ? 1 : -1);
+        } else if (evt.target.value === 'Сначала недорогие') {
+          const sorted = this.cards.sort((c1, c2) => c1.price > c2.price ? 1 : -1);
+        } else if (evt.target.value === 'По алфавиту') {
+          const sorted = this.cards.sort((c1, c2) => c1.name > c2.name ? 1 : -1);
+        } else {
+          const sorted = this.cards.sort((c1, c2) => c1.id < c2.id ? 1 : -1);
+        }
+      }
+    }
   }
 </script>
 
@@ -41,7 +59,7 @@
     color: #B4B4B4;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    width: 140px;
+    width: 150px;
     height: 36px;
     margin-bottom: 19px;
     padding: 10px 16px;
