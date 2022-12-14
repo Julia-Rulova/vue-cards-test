@@ -1,72 +1,37 @@
 [
   {
     "id": 0,
-    "name": "Наименование товара",
-    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "imageUrl": "src/assets/images/card-image.png",
-    "price": 10000
+    "name": "Барсик",
+    "description": "Красивый и пушистый котик 1",
+    "imageUrl": "https://balex.cc/photo/images/2019/10/28/0_e9dca_d32a807d_orig.jpg",
+    "price": 1000
   },
   {
     "id": 1,
-    "name": "Наименование товара",
-    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "imageUrl": "src/assets/images/card-image.png",
-    "price": 10000
+    "name": "Пушок",
+    "description": "Котик играет с листьями",
+    "imageUrl": "https://blog.ferplast.com/wp-content/uploads/2018/09/come-proteggere-il-gatto-in-autunno-1024x684.jpg",
+    "price": 1500
   },
   {
     "id": 2,
-    "name": "Наименование товара",
-    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "imageUrl": "src/assets/images/card-image.png",
-    "price": 10000
+    "name": "Рыжик",
+    "description": "Котик в свитере и шарфе сидит на качелях на качелях с яблоками",
+    "imageUrl": "https://i.pinimg.com/736x/27/c4/c7/27c4c7f5d6f13bc47fae33c83ef794c7--autumn-animals-cat-wallpaper.jpg",
+    "price": 2000
   },
   {
     "id": 3,
-    "name": "Наименование товара",
-    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "imageUrl": "src/assets/images/card-image.png",
+    "name": "Лесной котик",
+    "description": "Котик в лесу гуляет по снегу",
+    "imageUrl": "https://plus-one.ru/files/news/2020/01/503-rss.jpg",
     "price": 10000
   },
   {
     "id": 4,
-    "name": "Наименование товара",
-    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "imageUrl": "src/assets/images/card-image.png",
-    "price": 10000
-  },
-  {
-    "id": 5,
-    "name": "Наименование товара",
-    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "imageUrl": "src/assets/images/card-image.png",
-    "price": 10000
-  },
-  {
-    "id": 6,
-    "name": "Наименование товара",
-    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "imageUrl": "src/assets/images/card-image.png",
-    "price": 10000
-  },
-  {
-    "id": 7,
-    "name": "Наименование товара",
-    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "imageUrl": "src/assets/images/card-image.png",
-    "price": 10000
-  },
-  {
-    "id": 8,
-    "name": "Наименование товара",
-    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "imageUrl": "src/assets/images/card-image.png",
-    "price": 10000
-  },
-  {
-    "id": 9,
-    "name": "Наименование товара",
-    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "imageUrl": "src/assets/images/card-image.png",
-    "price": 10000
+    "name": "Лёша",
+    "description": "Серьезный кот Алексей",
+    "imageUrl": "https://s0.rbk.ru/v6_top_pics/media/img/6/67/756484737186676.jpg",
+    "price": 5000
   }
 ]

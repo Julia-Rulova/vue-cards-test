@@ -1,27 +1,27 @@
 <template>
   <section class="form__section">
-    <h1 class="form__title">Добавление товара</h1>
+    <h1 class="form__title">Добавление котика</h1>
 
     <form class="form" @submit.prevent>
       <div class="form__input-container">
         <div class="form__label-container">
-          <label class="form__input-label" for="name">Наименование товара</label>
+          <label class="form__input-label" for="name">Имя котика</label>
           <div class="form__input-required" />
         </div>
         <input class="form__input" :class="{'form__input_error': nameError}" v-model="card.name" id="name"
-          placeholder="Введите наименование товара" @input="validateName" type="text" maxlength="40" />
+          placeholder="Введите имя котика" @input="validateName" type="text" maxlength="40" />
         <span class="form__input-error">{{nameError}}</span>
       </div>
 
       <div class="form__input-container">
-        <label class="form__input-label" for="description">Описание товара</label>
+        <label class="form__input-label" for="description">Описание котика</label>
         <textarea class="form__input form__input_textarea" v-model="card.description" id="description"
-          placeholder="Введите описание товара" maxlength="240" />
+          placeholder="Введите описание котика" maxlength="240" />
       </div>
 
       <div class="form__input-container">
         <div class="form__label-container">
-          <label class="form__input-label" for="imageUrl">Ссылка на изображение товара</label>
+          <label class="form__input-label" for="imageUrl">Ссылка на изображение котика</label>
           <div class="form__input-required" />
         </div>
         <input class="form__input" :class="{'form__input_error': imageUrlError}" v-model="card.imageUrl" id="imageUrl"
@@ -31,17 +31,17 @@
 
       <div class="form__input-container">
         <div class="form__label-container">
-          <label class="form__input-label" for="price">Цена товара</label>
+          <label class="form__input-label" for="price">Цена котика</label>
           <div class="form__input-required" />
         </div>
         <input class="form__input" :class="{'form__input_error': priceError}" v-model="card.price" id="price"
-          placeholder="Введите цену" type="number" min="1" @input="validatePrice" />
+          placeholder="Введите цену" type="number" min="0" @input="validatePrice" />
         <span class="form__input-error">{{priceError}}</span>
       </div>
 
       <button type="submit" class="form__submit-btn" :class="{'form__submit-btn_active':isBtnActive}"
         @click="handleSubmit" :disabled="!isBtnActive">Добавить
-        товар</button>
+        котика</button>
     </form>
   </section>
 </template>
@@ -64,7 +64,7 @@
     methods: {
       validateName(evt) {
         if (evt.target.value.length < 2 || evt.target.value.length > 40) {
-          this.nameError = "Название должно содержать от 2 до 40 символов";
+          this.nameError = "Имя должно содержать от 2 до 40 символов";
         } else {
           this.nameError = "";
         }
@@ -78,8 +78,8 @@
         }
       },
       validatePrice(evt) {
-        if (!evt.target.value || evt.target.value < 1) {
-          this.priceError = "Введите цену товара";
+        if (!evt.target.value || evt.target.value < 0) {
+          this.priceError = "Введите цену котика";
         } else {
           this.priceError = "";
         }
