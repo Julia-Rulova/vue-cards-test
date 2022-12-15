@@ -2,28 +2,28 @@
   {
     "id": 0,
     "name": "Барсик",
-    "description": "Красивый и пушистый котик 1",
+    "description": "Красивый и пушистый котик",
     "imageUrl": "https://balex.cc/photo/images/2019/10/28/0_e9dca_d32a807d_orig.jpg",
     "price": 1000
   },
   {
     "id": 1,
     "name": "Пушок",
-    "description": "Котик играет с листьями",
+    "description": "Котик, который любит играть с листьями",
     "imageUrl": "https://blog.ferplast.com/wp-content/uploads/2018/09/come-proteggere-il-gatto-in-autunno-1024x684.jpg",
     "price": 1500
   },
   {
     "id": 2,
     "name": "Рыжик",
-    "description": "Котик в свитере и шарфе сидит на качелях на качелях с яблоками",
+    "description": "Любит одеваться в разные милые свитера и сидеть на качелях, самый уютный котик)",
     "imageUrl": "https://i.pinimg.com/736x/27/c4/c7/27c4c7f5d6f13bc47fae33c83ef794c7--autumn-animals-cat-wallpaper.jpg",
     "price": 2000
   },
   {
     "id": 3,
     "name": "Лесной котик",
-    "description": "Котик в лесу гуляет по снегу",
+    "description": "Ему очень нравится гулять по снегу в лесу",
     "imageUrl": "https://plus-one.ru/files/news/2020/01/503-rss.jpg",
     "price": 10000
   },
