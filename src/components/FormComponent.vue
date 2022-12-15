@@ -254,6 +254,10 @@
       align-items: center;
       padding-top: 15px;
     }
+
+    .form__title {
+      margin: 0;
+    }
   }
 
   @media screen and (max-width: 430px) {
@@ -268,7 +272,6 @@
     .form__title {
       font-size: 20px;
       line-height: 25px;
-      margin: 0 0 10px;
     }
   }
 </style>

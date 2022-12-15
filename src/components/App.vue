@@ -2,7 +2,7 @@
   <section class="app">
     <button class="app__open-popup" v-if="width < 1095" @click="openPopup">Добавить котика</button>
     <form-component v-else @create="createCard" />
-    <cards-component :cards="cards" @remove="removeCard" />
+    <cards-component :cards="cards" @remove="removeCard" :loading="loading" />
 
     <popup-component :show="isPopupOpen" @hide="hidePopup">
       <form-component @create="createCard" />
@@ -22,7 +22,8 @@
       return {
         cards: cardsList,
         width: innerWidth,
-        isPopupOpen: false
+        isPopupOpen: false,
+        loading: false
       }
     },
     methods: {
@@ -51,6 +52,12 @@
       if (cardsArr) {
         this.cards = JSON.parse(cardsArr)
       }
+    },
+    mounted() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+      }, 800)
     },
     created() {
       window.addEventListener('resize', this.updateWidth);
@@ -93,14 +100,21 @@
     width: 150px;
     height: 36px;
     margin: 0;
-    padding: 10px 16px;
-    position: fixed;
+    padding: 10px;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    top: 32px;
+    top: 0;
+    left: 32px;
     z-index: 2;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .app__open-popup:hover {
+    box-shadow: 0px 5px 39px 2px rgba(34, 60, 80, 0.2);
     transition: all 0.5s ease-in-out;
   }
 
@@ -135,15 +149,22 @@
     }
 
     .app__open-popup {
-      bottom: 32px;
-      top: auto;
-      right: 32px;
+      width: 140px;
+      padding: 7px;
+      left: 0;
+    }
+  }
+
+  @media screen and (max-width: 355px) {
+    .app__open-popup {
+      left: 10px;
+      padding: 0;
+      height: 32px;
+      width: 135px;
     }
 
-    .app__open-popup:hover {
-      box-shadow: 0px 5px 20px 10px rgba(34, 60, 80, 0.2);
-      cursor: pointer;
-      transition: all 0.5s ease-in-out;
+    .app {
+      margin: 16px auto;
     }
   }
 </style>
